@@ -1,14 +1,13 @@
 <?php
 
-    class getdata_model extends mysql
+    class showdata_model extends mysql
     {
         public function __construct()
         {
            parent::__construct();
         }
 
-        public function getdata($data)
-        {
+        public function show($data){
             $result = null;
             if($data['shield_id'] !='0' && $data['module_id'] != '0')
             {

@@ -3,7 +3,7 @@
     require_once('resources/helpers/helper.php');
 
 //Initialization controller
-    $controller ='getdata';
+    $controller ='showdata';
 
 //Getting the requested id
     $data['shield_id']= !empty($_GET['shield_id']) ? str_clean($_GET['shield_id']) : '0';

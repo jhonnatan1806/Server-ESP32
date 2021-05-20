@@ -1,18 +1,20 @@
 <?php
 
-    class getdata extends Controllers
+    class showdata extends Controllers
     {
+
         public function __construct($data)
         {
             parent::__construct();
-            $this->getdata($data);
+            $this->data = $data;
             $this->views->getView($this,$data);
+            $this->getdata();
             
         }
 
-        public function getdata($data)
+        public function getdata()
         {
-            $info = $this->model->getdata($data);
+            $info = $this->model->show($this->data);
             echo json_generator($info);
         }
     }
