@@ -1,12 +1,12 @@
 <?php
-    const BASE_URL = 'http://localhost/esp32_server';
+    const BASE_URL = 'http://localhost/server';
     const BREAKLINE = '<br>';
 
     //database
     const DB_HOST = 'localhost';
-    const DB_NAME = 'appesp32';
-    const DB_USER = 'php_queries';
-    const DB_PASSWORD = 'appesp32_db';
+    const DB_NAME = 'esp32_db';
+    const DB_USER = 'root';
+    const DB_PASSWORD = '';
     const DB_CHARSET = 'utf8mb4';
 
     //Time Zone

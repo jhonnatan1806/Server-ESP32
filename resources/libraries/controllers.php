@@ -14,6 +14,7 @@
             require_once($route_class);
             $this->model = new $model();  
         }
+
     }
 
 ?>

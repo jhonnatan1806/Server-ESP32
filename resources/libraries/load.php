@@ -3,7 +3,7 @@
     if(file_exists($controller_file))
     {
         require_once($controller_file);
-        $controller = new $controller();
+        $controller = new $controller($data);
         
     }
 

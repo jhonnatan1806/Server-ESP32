@@ -6,8 +6,8 @@
     $controller ='getdata';
 
 //Getting the requested id
-    $shield_id = !empty($_GET['shield_id']) ? $_GET['shield_id'] : '0';
-    $module_id = !empty($_GET['module_id']) ? $_GET['module_id'] : '0';
+    $data['shield_id']= !empty($_GET['shield_id']) ? str_clean($_GET['shield_id']) : '0';
+    $data['module_id'] = !empty($_GET['module_id']) ? str_clean($_GET['module_id']) : '0';
     /*$status = !empty($_GET['status']) ? $_GET['status'] : '0';
     $time_on = !empty($_GET['time_on']) ? $_GET['time_on'] : '00:00:00';
     $time_off = !empty($_GET['time_off']) ? $_GET['time_off'] : '00:00:00';

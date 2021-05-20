@@ -1,6 +1,6 @@
 <?php
 
-    function strClean($strcadena){
+    function str_clean($strcadena){
         $string = preg_replace(['/\s+/','/^\s|\s$/'],[' ',''],$strcadena);
         $string = trim($string);
         $string = stripslashes($string);
@@ -43,31 +43,51 @@
                 array_push($result, array( strtoupper($key_array) => $data["$key_array"],));
                 next($data);
             }
-            $result = json_encode(array('RESULT_FORMAT_JSON'=>$result));
+            $result = json_encode($result);
         }
         return $result;
     }
 
-    function format_seconds($data)
+    function validate_date($date, $format = 'Y-m-d H:i:s')
     {
+        $d = DateTime::createFromFormat($format, $date);
+        return $d && $d->format($format) == $date;
+    }
+
+    function add_time($date,$data){
+        if(validate_date($date) && is_numeric($data))
+        {
+            $date = new DateTime("$date");
+            $date->add(new DateInterval('PT'."$data".'S'));
+            //$result['time'] = $date->format('H:i:s');
+        }
+        return $date;
+    }
+
+    /*function format_seconds($data)
+    {
+        $result = null;
         $params = explode(":",$data);
         $hours = $params[0];
         $minutes = $params[1];
         $seconds = $params[2];
-        $data= ($hours*3600)+($minutes*60)+ $seconds;
-        return $data;
+        $result= ($hours*3600)+($minutes*60)+ $seconds;
+        return $result;
     
     }
 
     function format_hours($data)
     {
+        $result = null;
         $hours = floor($data/ 3600);
 	    $minutes = floor(($data - ($hours * 3600)) / 60);
 	    $seconds = $data - ($hours * 3600) - ($minutes * 60);
         if($hours<=9) $hours = '0'.$hours;
         if($minutes<=9) $minutes = '0'.$minutes;
         if($seconds<=9) $seconds = '0'.$seconds;
-        $data = $hours.":".$minutes.":".$seconds;
-        return $data;
-    }
+        $result = $hours.":".$minutes.":".$seconds;
+        return $result;
+    }*/
+
+
 ?>
