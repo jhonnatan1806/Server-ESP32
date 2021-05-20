@@ -32,35 +32,30 @@
         return $string;
     }
 
-    function data_separator($separator,$data){
-        $params = explode("$separator",$data);
-        return $params;
-    }
-
     function json_generator($data){
-        if(!empty($data)){
+        $result = null;
+        if(!empty($data))
+        {
             $result = array();
-            while (current($data)!=null){
+            while (current($data)!=null)
+            {
                 $key_array = key($data);
-                array_push($result, array(strtoupper($key_array) => $data["$key_array"],));
+                array_push($result, array( strtoupper($key_array) => $data["$key_array"],));
                 next($data);
             }
             $result = json_encode(array('RESULT_FORMAT_JSON'=>$result));
-            return $result;
-        }else{ 
-            $result = "ERROR_0XHH000001".BREAKLINE;
         }
         return $result;
     }
 
     function format_seconds($data)
     {
-        $params = data_separator(":",$data);
+        $params = explode(":",$data);
         $hours = $params[0];
         $minutes = $params[1];
         $seconds = $params[2];
-        $total_seconds= ($hours*3600)+($minutes*60)+ $seconds;
-        return $total_seconds;
+        $data= ($hours*3600)+($minutes*60)+ $seconds;
+        return $data;
     
     }
 
