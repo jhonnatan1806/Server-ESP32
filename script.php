@@ -10,7 +10,7 @@
 //Getting the requested id
     $data['shield_id']= !empty($_GET['shield_id']) ? str_clean($_GET['shield_id']) : '0';
     $data['module_id'] = !empty($_GET['module_id']) ? str_clean($_GET['module_id']) : '0';
-    $data['creation_date'] = !empty($_GET['creatin_date']) ? $_GET['creatin_date'] : '2000-01-01 00:00:00';
+    $data['creation_date'] = !empty($_GET['creatin_date']) ? $_GET['creatin_date'] : DEFAULT_DATE;
     $data['status'] = !empty($_GET['status']) ? $_GET['status'] : '0';
     $data['cycles'] = !empty($_GET['cycles']) ? $_GET['cycles'] : '0';
     $data['cycles_completed'] = !empty($_GET['cycles_completed']) ? $_GET['cycles_completed'] : '0';

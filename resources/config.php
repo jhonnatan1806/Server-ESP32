@@ -9,6 +9,9 @@
     const DB_PASSWORD = '';
     const DB_CHARSET = 'utf8mb4';
 
+    //DEFAULT STRINGS
+    const DEFAULT_DATE = '2000-01-01 00:00:00';
+
     //Time Zone
     date_default_timezone_set('America/Lima');
 

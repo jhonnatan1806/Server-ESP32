@@ -1,10 +1,7 @@
 <?php 
-    //echo BREAKLINE.date("Y-m-d H:i:s");
-    $x = 5;
-    if($x == 1) $validation = false;
-    else if($x == 2) $validation = false;
-    else if($x == 3) $validation = false;
-    else if($x == 4) $validation = false;
-    else $validation = true;
-    echo BREAKLINE."x>4 ".value_boolean($validation);
+    /*$mydate = date("Y-m-d H:i:s");
+    $datef = $mydate->format('Y-m-d');*/
+    //$string_date = date("Y-m-d H:i:s");
+    $date = new DateTime(date("Y-m-d H:i:s"));
+    echo BREAKLINE.$date->format('H:i:s');
 ?>

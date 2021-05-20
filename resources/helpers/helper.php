@@ -60,18 +60,18 @@
         return $d && $d->format($format) == $date;
     }
 
-    function add_time($date,$data){
-        if(validate_date($date) && is_numeric($data))
+    function add_time($date,$seconds){
+        if(validate_date($date) && is_numeric($seconds))
         {
             $date = new DateTime("$date");
-            $date->add(new DateInterval('PT'."$data".'S'));
+            $date->add(new DateInterval('PT'."$seconds".'S'));
             //$result['time'] = $date->format('H:i:s');
         }
         return $date;
     }
 
 
-    function format_seconds($data)
+    /*function format_seconds($data)
     {
         $result = null;
         $params = explode(":",$data);
@@ -81,8 +81,8 @@
         $result= ($hours*3600)+($minutes*60)+ $seconds;
         return $result;
     
-    }
-/*
+    }*/
+    /*
     function format_hours($data)
     {
         $result = null;
