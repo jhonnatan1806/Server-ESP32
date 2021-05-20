@@ -32,7 +32,13 @@
         return $string;
     }
 
-    function json_generator($data){
+    function value_boolean($data)
+    {
+        return $data?'true':'false';
+    }
+
+    function json_generator($data)
+    {
         $result = null;
         if(!empty($data))
         {
@@ -64,7 +70,8 @@
         return $date;
     }
 
-    /*function format_seconds($data)
+
+    function format_seconds($data)
     {
         $result = null;
         $params = explode(":",$data);
@@ -75,7 +82,7 @@
         return $result;
     
     }
-
+/*
     function format_hours($data)
     {
         $result = null;

@@ -17,6 +17,12 @@
             $this->sendtoview();
         }
 
+        public function modifydata()
+        {
+            $info = $this->model->set($this->data);
+            $this->sendtoview();
+        }
+
         public function sendtoview()
         {
             $send_data['page_tag'] = "title tabs";
