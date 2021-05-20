@@ -3,13 +3,14 @@
     {
         public function __construct()
         {
-            $this->views = new Views();
+            $this->views = new views();
             $this->loadModel();
         }
 
         public function loadModel()
         {
-            $model = get_class($this).'_model';
+            $controller_name =  substr(get_class($this),0,-11);
+            $model = $controller_name.'_model';
             $route_class = 'resources/models/'.$model.'.php';
             require_once($route_class);
             $this->model = new $model();  

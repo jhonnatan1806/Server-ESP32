@@ -4,7 +4,8 @@
     {
         function getView($controller,$data="")
         {
-            $controller = get_class($controller).'_view';
+            $controller_name = substr(get_class($controller),0,-11);//remove _controller
+            $controller = $controller_name.'_view';
             $view = 'resources/views/'.$controller.'.php';
             require_once($view);
         }

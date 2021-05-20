@@ -1,13 +1,13 @@
 <?php
 
-    class showdata_model extends mysql
+    class script_model extends mysql
     {
         public function __construct()
         {
            parent::__construct();
         }
 
-        public function show($data){
+        public function get($data){
             $result = null;
             if($data['shield_id'] !='0' && $data['module_id'] != '0')
             {
@@ -20,6 +20,8 @@
             }
             return $result;
         }
-            
+
+        public function set($data)
+        {}
     }
 ?>

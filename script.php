@@ -3,7 +3,9 @@
     require_once('resources/helpers/helper.php');
 
 //Initialization controller
-    $controller ='showdata';
+    $controller ='script_controller';
+    $method = !empty($_GET['method']) ? str_clean($_GET['method']) : 'sendtoview';
+
 
 //Getting the requested id
     $data['shield_id']= !empty($_GET['shield_id']) ? str_clean($_GET['shield_id']) : '0';

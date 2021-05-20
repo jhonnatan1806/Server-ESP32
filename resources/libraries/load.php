@@ -4,7 +4,10 @@
     {
         require_once($controller_file);
         $controller = new $controller($data);
-        
+        if(method_exists($controller, $method))
+        {
+            $controller->{$method}();
+        }
     }
 
 ?>
